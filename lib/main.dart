@@ -7,9 +7,39 @@ import './screens/product_detail_screen.dart';
 import './providers/products.dart';
 import './providers/cart.dart';
 
-void main() => runApp(MyApp());
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'screens/home_screen.dart';
+
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      // Initialize FlutterFire
+      future: Firebase.initializeApp(),
+      builder: (context, snapshot) {
+        // Check for errors
+        if (snapshot.hasError) {
+          return Container();
+        }
+
+        // Once complete, show your application
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MyApp1();
+        }
+
+        // Otherwise, show something whilst waiting for initialization to complete
+        return Container();
+      },
+    );
+  }
+}
+
+class MyApp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -28,10 +58,13 @@ class MyApp extends StatelessWidget {
             accentColor: Colors.deepOrange,
             fontFamily: 'Lato',
           ),
-          home: ProductsOverviewScreen(),
+          initialRoute: '/',
           routes: {
+            '/': (context) => HomeScreen(),
             ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
             CartScreen.routeName: (ctx) => CartScreen(),
+            ProductsOverviewScreen.routeName: (context) =>
+                ProductsOverviewScreen(),
           }),
     );
   }
