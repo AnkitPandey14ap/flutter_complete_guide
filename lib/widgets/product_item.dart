@@ -22,7 +22,6 @@ class ProductItem extends StatelessWidget {
       child: GridTile(
         child: GestureDetector(
           onTap: () {
-            BFirebaseData().test();
             Navigator.of(context).pushNamed(
               ProductDetailScreen.routeName,
               arguments: product.id,
