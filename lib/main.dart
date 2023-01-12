@@ -1,4 +1,6 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/ml_kit/vision_detector_views/detector_views.dart';
 import 'package:provider/provider.dart';
 
 import './screens/cart_screen.dart';
@@ -8,10 +10,15 @@ import './providers/products.dart';
 import './providers/cart.dart';
 
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 import 'screens/home_screen.dart';
 
-void main() {
+List<CameraDescription> cameras = [];
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  cameras = await availableCameras();
+
   runApp(MyApp());
 }
 
@@ -65,6 +72,7 @@ class MyApp1 extends StatelessWidget {
             CartScreen.routeName: (ctx) => CartScreen(),
             ProductsOverviewScreen.routeName: (context) =>
                 ProductsOverviewScreen(),
+            FaceDetectorView.routeName: (ctx) => FaceDetectorView(),
           }),
     );
   }

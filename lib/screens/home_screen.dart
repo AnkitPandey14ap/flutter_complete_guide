@@ -1,6 +1,7 @@
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/data/firebase_data.dart';
+import 'package:flutter_complete_guide/ml_kit/vision_detector_views/detector_views.dart';
 
 import 'products_overview_screen.dart';
 
@@ -27,7 +28,13 @@ class HomeScreen extends StatelessWidget {
                 BFirebaseData().test();
               },
               child: Text("Firebase msg check")),
-          TextButton(onPressed: () {}, child: Text("Selfie")),
+          TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  FaceDetectorView.routeName,
+                );
+              },
+              child: Text("Selfie")),
         ],
       ),
     );
