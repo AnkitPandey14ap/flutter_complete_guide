@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/data/firebase_data.dart';
 import 'package:flutter_complete_guide/ml_kit/vision_detector_views/detector_views.dart';
+import 'package:flutter_complete_guide/utils/contacts_util.dart';
 
 import 'products_overview_screen.dart';
 
@@ -29,14 +30,21 @@ class HomeScreen extends StatelessWidget {
               },
               child: Text("Firebase msg check")),
           TextButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(
-                  FaceDetectorView.routeName,
-                );
-              },
+              onPressed: () => navigateToSelfieScreen(context),
               child: Text("Selfie")),
+          TextButton(onPressed: fetchContacts, child: Text("Frtch contacts"))
         ],
       ),
     );
+  }
+
+  void navigateToSelfieScreen(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      FaceDetectorView.routeName,
+    );
+  }
+
+  void fetchContacts() {
+    ContactsUtil().readContacts();
   }
 }
