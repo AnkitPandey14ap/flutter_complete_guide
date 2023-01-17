@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/ml_kit/vision_detector_views/detector_views.dart';
+import 'package:flutter_complete_guide/screens/local_db_screen.dart';
 import 'package:provider/provider.dart';
 
 import './screens/cart_screen.dart';
@@ -73,6 +74,7 @@ class MyApp1 extends StatelessWidget {
             ProductsOverviewScreen.routeName: (context) =>
                 ProductsOverviewScreen(),
             FaceDetectorView.routeName: (ctx) => FaceDetectorView(),
+            LocalDbScreen.routeName: (context) => LocalDbScreen()
           }),
     );
   }
