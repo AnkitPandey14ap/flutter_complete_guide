@@ -8,9 +8,16 @@ import 'package:ymchat_flutter/ymchat_flutter.dart';
 
 import 'products_overview_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  var num_list = ['A', 'B', 'C'];
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +54,15 @@ class HomeScreen extends StatelessWidget {
           TextButton(
             onPressed: openYmChat,
             child: Text("Open YmChat"),
+          ),
+          TextButton(
+            onPressed: () {
+              throw Exception();
+              setState(() {
+                index = index + 1;
+              });
+            },
+            child: Text("Test Crashlytics ${num_list[index]}"),
           ),
         ],
       ),
