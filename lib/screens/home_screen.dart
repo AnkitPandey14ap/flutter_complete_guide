@@ -57,12 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           TextButton(
             onPressed: () {
-              throw Exception();
               setState(() {
                 index = index + 1;
               });
             },
-            child: Text("Test Crashlytics ${num_list[index]}"),
+            child: Text("Custom Crash on Firebase ${num_list[index]}"),
           ),
         ],
       ),
