@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
             child: Text(
-              "Shoping app",
+              "Dummy Shoping app UI",
               textDirection: TextDirection.ltr,
               textAlign: TextAlign.end,
             ),
@@ -51,10 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
           TextButton(
               onPressed: () => navigateToSelfieScreen(context),
               child: Text("Selfie")),
-          TextButton(
-            onPressed: fetchContacts,
-            child: Text("Fetch contacts"),
-          ),
+          // TextButton(
+          //   onPressed: fetchContacts,
+          //   child: Text("Fetch contacts"),
+          // ),
           TextButton(
             onPressed: () {
               navigateLocalDbScreen(context);
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           TextButton(
             onPressed: openYmChat,
-            child: Text("Open YmChat"),
+            child: Text("Open YmChat (Dummy)"),
           ),
           TextButton(
             onPressed: () {

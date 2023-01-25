@@ -57,13 +57,22 @@ android {
         versionName flutterVersionName
     }
 
+    signingConfigs {
+        release {
+            storeFile file('../my_key_store')
+            storePassword '123456'
+            keyAlias = 'key0'
+            keyPassword '123456'
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             debuggable false
             shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
         }
     }
 }

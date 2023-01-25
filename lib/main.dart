@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
       // Initialize FlutterFire
       future: Firebase.initializeApp(),
       builder: (context, snapshot) {
-        // Check for errors
+        // Check for errorsH
         if (snapshot.hasError) {
           return Container();
         }
