@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text("Dummy"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

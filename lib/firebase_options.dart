@@ -26,9 +26,15 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -48,32 +54,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDaCiswWDHdBPGPzg6yhO48E_KSDXxQ78U',
-    appId: '1:658422355273:android:1e1bf55a8657681ad57698',
+    appId: '1:658422355273:android:b3e2e38bba2440b5d57698',
     messagingSenderId: '658422355273',
     projectId: 'flutter-app-58f40',
     databaseURL: 'https://flutter-app-58f40-default-rtdb.firebaseio.com',
     storageBucket: 'flutter-app-58f40.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDaoe5tkMdBlZlsLT6Dbq6_7D5Dk693994',
-    appId: '1:658422355273:ios:23ed996c717dd7b9d57698',
-    messagingSenderId: '658422355273',
-    projectId: 'flutter-app-58f40',
-    databaseURL: 'https://flutter-app-58f40-default-rtdb.firebaseio.com',
-    storageBucket: 'flutter-app-58f40.appspot.com',
-    iosClientId: '658422355273-fe0nhqtcv2salgakgbdr3aiccv9a92av.apps.googleusercontent.com',
-    iosBundleId: 'com.hamarapandey.flutterCompleteGuide',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDaoe5tkMdBlZlsLT6Dbq6_7D5Dk693994',
-    appId: '1:658422355273:ios:7f139994b17578a8d57698',
-    messagingSenderId: '658422355273',
-    projectId: 'flutter-app-58f40',
-    databaseURL: 'https://flutter-app-58f40-default-rtdb.firebaseio.com',
-    storageBucket: 'flutter-app-58f40.appspot.com',
-    iosClientId: '658422355273-p12fr1qrao9p0kph2pjssabg2ahjbv3p.apps.googleusercontent.com',
-    iosBundleId: 'com.example.flutterCompleteGuide',
   );
 }

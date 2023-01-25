@@ -84,7 +84,7 @@ class _FingerprintAuthState extends State<FingerprintAuth> {
           children: [
             const Center(
               child: Text(
-                "Login",
+                "Testing",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 48.0,

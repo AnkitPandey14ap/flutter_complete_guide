@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="application_id_for_provider">com.example.flutter_complete_guide.fileprovider</string>
+    <string name="application_id_for_provider">com.stashfin.flutter_complete_guide.fileprovider</string>
 </resources>
