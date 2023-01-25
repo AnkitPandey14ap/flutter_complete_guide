@@ -25,14 +25,22 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("Home"),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           TextButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(
-                  ProductsOverviewScreen.routeName,
-                );
-              },
-              child: Text("Shoping app")),
+            onPressed: () {
+              Navigator.of(context).pushNamed(
+                ProductsOverviewScreen.routeName,
+              );
+            },
+            child: Text(
+              "Shoping app",
+              textDirection: TextDirection.ltr,
+              textAlign: TextAlign.end,
+            ),
+          ),
           TextButton(
               onPressed: () {
                 BFirebaseData().test();
