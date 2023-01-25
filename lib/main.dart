@@ -4,6 +4,7 @@ import 'package:camera/camera.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/ml_kit/vision_detector_views/detector_views.dart';
+import 'package:flutter_complete_guide/screens/finger_print_auth.dart';
 import 'package:flutter_complete_guide/screens/local_db_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -84,7 +85,7 @@ class MyApp1 extends StatelessWidget {
             accentColor: Colors.deepOrange,
             fontFamily: 'Lato',
           ),
-          initialRoute: '/',
+          initialRoute: HomeScreen.routeName,
           routes: {
             '/': (context) => HomeScreen(),
             ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
@@ -92,7 +93,8 @@ class MyApp1 extends StatelessWidget {
             ProductsOverviewScreen.routeName: (context) =>
                 ProductsOverviewScreen(),
             FaceDetectorView.routeName: (ctx) => FaceDetectorView(),
-            LocalDbScreen.routeName: (context) => LocalDbScreen()
+            LocalDbScreen.routeName: (context) => LocalDbScreen(),
+            FingerprintAuth.routeName: (context) => FingerprintAuth()
           }),
     );
   }

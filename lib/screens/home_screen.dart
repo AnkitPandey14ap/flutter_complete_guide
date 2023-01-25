@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/data/firebase_data.dart';
 import 'package:flutter_complete_guide/ml_kit/vision_detector_views/detector_views.dart';
+import 'package:flutter_complete_guide/screens/finger_print_auth.dart';
 import 'package:flutter_complete_guide/screens/local_db_screen.dart';
 import 'package:flutter_complete_guide/utils/contacts_util.dart';
 import 'package:ymchat_flutter/ymchat_flutter.dart';
@@ -9,6 +10,7 @@ import 'package:ymchat_flutter/ymchat_flutter.dart';
 import 'products_overview_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const routeName = '/';
   const HomeScreen({Key key}) : super(key: key);
 
   @override
@@ -70,6 +72,18 @@ class _HomeScreenState extends State<HomeScreen> {
               });
             },
             child: Text("Custom Crash on Firebase ${num_list[index]}"),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(
+                FingerprintAuth.routeName,
+              );
+            },
+            child: Text(
+              "Biometric",
+              textDirection: TextDirection.ltr,
+              textAlign: TextAlign.end,
+            ),
           ),
         ],
       ),
